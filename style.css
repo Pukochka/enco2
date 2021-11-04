@@ -449,10 +449,15 @@ ul {
 }
 
 .__ecnocom_main_btns {
+  padding: 25px;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+  row-gap: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 29px 48px 48px 48px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .__ecnocom_main_btns_item1 {
@@ -462,8 +467,18 @@ ul {
 }
 
 .__ecnocom_main_btns_item1 > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 200px;
+  height: 48px;
   color: #fff;
-  padding: 15px 46px;
   background-color: var(--black);
   border: 1px solid var(--black);
   border-radius: 2px;
@@ -477,15 +492,24 @@ ul {
 }
 
 .__ecnocom_main_btns_item2 {
-  margin-left: 10px;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
 }
 
 .__ecnocom_main_btns_item2 > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 246px;
+  height: 48px;
   color: #fff;
-  padding: 15px 46px;
   background-color: var(--gold);
   border: 1px solid var(--gold);
   border-radius: 2px;
