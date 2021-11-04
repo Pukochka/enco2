@@ -501,11 +501,12 @@ if (document.querySelector('.banner-top')) {
 }
 function topAnimate() {
     if (pageYOffset > 1) {
+        document.querySelector('main').classList.add('scrolled');
         document.querySelector('.header-desktop').classList.add('scrolled');
         if (document.querySelector('.banner-top')) {
             BannerTop.bannerBlock.remove();
         }
-        document.querySelector('main').classList.add('scrolled');
+        
     } else {
         document.querySelector('.header-desktop').classList.remove('scrolled');
         document.querySelector('main').classList.remove('scrolled');
