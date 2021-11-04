@@ -28,7 +28,7 @@ $(function(){
     });
 
     $('.custom-select-viss').hide();
-    $('.slif').click(function(e){
+    $('#title1').click(function(e){
         e.preventDefault();
         $('.custom-select-viss').slideToggle();
     });
