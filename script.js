@@ -22,7 +22,7 @@ $(function(){
     });
 
     $('.custom-select-vis').hide();
-    $('.custom-select-title').click(function(e){
+    $('#title').click(function(e){
         e.preventDefault();
         $('.custom-select-vis').slideToggle();
     });
@@ -259,9 +259,9 @@ $('.mobile-burger').click(function(){
             $('.third').hide();
             $('.forth').hide();
             $('.filter-hidden-more').hide();
-$('.filter-visible-more').click(function(e){
+            $('.filter-visible-more').click(function(e){
     $('.filter-hidden-more').slideToggle();
-});
+                });
 
 $('.first1').click(function(){
     $('.first').slideToggle();
