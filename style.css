@@ -594,10 +594,10 @@ ul {
 }
 
 .__enco_env_desc2 {
+  position: relative;
   margin-top: 33px;
   padding-top: 49px;
   background-color: #fff;
-  padding-bottom: 47px;
 }
 
 .__enco_env_track {
@@ -622,7 +622,7 @@ ul {
 
 .__enco_env_proj_item {
   min-width: 33%;
-  height: 180px;
+  height: 270px;
   position: relative;
 }
 
@@ -641,6 +641,7 @@ ul {
 }
 
 .__enco_env_btns {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -648,8 +649,8 @@ ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100px;
-  margin-top: 48px;
-  margin-left: 47px;
+  bottom: 20px;
+  left: 20px;
 }
 
 .__enco_env_btns_next, .__enco_env_btns_prev {
@@ -677,6 +678,10 @@ ul {
   background-color: var(--gold);
 }
 
+.__enco_env_btns_next:hover > svg > path, .__enco_env_btns_prev:hover > svg > path {
+  stroke: #fff;
+}
+
 .__enco_env_btns_next {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
@@ -687,25 +692,53 @@ ul {
           transform: rotate(90deg);
 }
 
-.pbb {
-  padding-bottom: 68px !important;
-  margin-left: 200px !important;
-}
-
 .__enco_business_track_item:hover .svg > path {
   fill: #fff;
   stroke: #fff;
-}
-
-.container {
-  overflow: hidden;
 }
 
 .__enco_business {
   position: relative;
 }
 
+.__enco_business_btns {
+  position: absolute;
+  width: 100px;
+  left: 20px;
+  bottom: 20px;
+}
+
+.__enco_business_btns_next, .__enco_business_btns_prev {
+  width: 46px;
+  height: 46px;
+  background-color: #f6f6f6;
+  border: none;
+  border-radius: 50%;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.__enco_business_btns_next:hover, .__enco_business_btns_prev:hover {
+  background-color: var(--gold);
+}
+
+.__enco_business_btns_next:hover > svg > path, .__enco_business_btns_prev:hover > svg > path {
+  stroke: #fff;
+}
+
+.__enco_business_btns_next {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.__enco_business_btns_prev {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
 .__enco_business_img {
+  margin-top: 110px;
+  position: relative;
   background-image: url(./img/buisnesstypes.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -717,14 +750,14 @@ ul {
   font-size: 36px;
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
-  padding-top: 60px;
-  padding-bottom: 39px;
+  position: absolute;
+  top: -60px;
 }
 
 .__enco_business_types {
   overflow: hidden;
-  -webkit-transform: translateY(-200px);
-          transform: translateY(-200px);
+  -webkit-transform: translateY(-220px);
+          transform: translateY(-220px);
 }
 
 .__enco_business_track {
@@ -775,10 +808,6 @@ ul {
   margin-left: 34px;
 }
 
-.irs-min, .irs-to, .irs-from, .irs-max {
-  visibility: hidden !important;
-}
-
 .__enco_filter_row_group_header {
   font-size: 11px;
   letter-spacing: 1px;
@@ -807,72 +836,6 @@ ul {
   background-color: #c5c5c5;
 }
 
-.range-slider {
-  height: 0px !important;
-}
-
-.__enco_filter_row_group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 29px;
-}
-
-.__enco_filter_row_group_item1 > input:checked + label::before {
-  border: 5px solid #fff;
-}
-
-.__enco_filter_row_group_item1 > label:hover {
-  color: #fff;
-  background: #919CA2;
-}
-
-.__enco_filter_row_group_item1 + .__enco_filter_row_group_item1 > label {
-  border-left: 1px solid #DADADA;
-}
-
-.__enco_filter_row_group_item1 > input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
-.__enco_filter_row_group_item1 > input:checked + label {
-  background: #003457;
-  color: #fff;
-}
-
-.__enco_filter_row_group_item1 > label {
-  font-family: 'OpenSans', sans-serif;
-  padding: 15px 15px 15px 45px;
-  background: #fff;
-  display: block;
-  cursor: pointer;
-  font-size: 15px;
-  line-height: 13px;
-  color: #2F2F2F;
-  position: relative;
-  border-radius: 2px;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
-.__enco_filter_row_group_item1 > label::before {
-  content: "";
-  height: 19px;
-  width: 19px;
-  position: absolute;
-  top: 12px;
-  left: 20px;
-  border-radius: 3px;
-  border: 1px solid #B3B3B3;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
 .__enco_form_row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -889,81 +852,6 @@ ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.custom-select-options::after {
-  background: url(./img/arrowbl.svg) !important;
-}
-
-.__enco_form_desc1, .__enco_form_desc2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.__enco_form_desc2 + .__enco_form_desc2 {
-  margin-left: 10px;
-}
-
-.__enco_form_var {
-  padding: 10px 20px;
-  font-weight: 700;
-  font-size: 12px;
-  background-color: #333333;
-  border-radius: 2px;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.__enco_form_clear {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: none;
-  border: none;
-  outline: none;
-  font-size: 13px;
-  text-transform: uppercase;
-  margin-left: 20px;
-  font-weight: 400;
-  color: #343434;
-  cursor: pointer;
-  letter-spacing: 1px;
-}
-
-.__enco_form_clear + .__enco_form_clear {
-  margin-left: 10px;
-}
-
-.__enco_form_par {
-  margin-right: 20px;
-}
-
-.__enco_form_videl {
-  margin-right: 25px;
-}
-
-.__enco_form_par_desc {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.__enco_form_par_desc_p {
-  margin-right: 11px;
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: #343434;
-  text-transform: uppercase;
 }
 
 .enco_p {
@@ -1014,6 +902,11 @@ ul {
   max-height: 245px !important;
 }
 
+.phone:hover > svg > path {
+  stroke: #fff;
+  fill: #fff;
+}
+
 .__enco_find {
   background-color: var(--white9);
   display: -webkit-box;
@@ -1037,13 +930,20 @@ ul {
 
 .__enco_find_btn {
   padding: 9px 27px;
-  border: solid 2px #222D4F;
+  border: solid 2px #474747;
   border-radius: 2px;
   background-color: #fff;
   font-size: 12px;
   font-weight: 700;
   color: #474747;
   text-transform: uppercase;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.__enco_find_btn:hover {
+  background-color: #474747;
+  color: #fff;
 }
 
 .__enco_find_all {
@@ -1884,6 +1784,17 @@ button {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .__enco_business_header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: 40px;
+    left: 30px;
+    color: #fff;
   }
 }
 

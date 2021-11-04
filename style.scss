@@ -444,11 +444,11 @@ ul{
         }
     }
     &_desc2{
-        
+        position: relative;
         margin-top: 33px;
         padding-top: 49px;
         background-color: #fff;
-        padding-bottom:47px;
+        
     }
     &_track{
         display: flex;
@@ -462,7 +462,7 @@ ul{
         }
         &_item{
             min-width: 33%;
-            height: 180px;
+            height: 270px;
             position: relative;
             &_img{
                 position: absolute;
@@ -479,11 +479,12 @@ ul{
         }
     }
     &_btns{
+        position: absolute;
         display: flex;
         justify-content: space-between;
         width: 100px;
-        margin-top: 48px;
-        margin-left: 47px;
+        bottom: 20px;
+        left: 20px;
         &_next,&_prev{
             display: flex;
             align-items: center;
@@ -499,6 +500,9 @@ ul{
             &:hover{
                 background-color: var(--gold);
             }
+            &:hover >svg > path{
+                stroke: #fff;
+            }
         }
         &_next{
             transform: rotate(-90deg);
@@ -508,20 +512,41 @@ ul{
         }
     }
 }
-.pbb{
-    padding-bottom: 68px !important;
-    margin-left: 200px !important;
-}
 .__enco_business_track_item:hover .svg>path{
     fill: #fff;
     stroke: #fff;
 }
-.container{
-    overflow: hidden;
-}
 .__enco_business{
     position: relative;
+    &_btns{
+        position: absolute;
+        width: 100px;
+        left: 20px;
+        bottom: 20px;
+        &_next,&_prev{
+            width: 46px;
+            height: 46px;
+            background-color: #f6f6f6;
+            border: none;
+            border-radius: 50%;
+            transition: .3s ease;
+            &:hover{
+                background-color: var(--gold);
+            }
+            &:hover >svg > path{
+                stroke: #fff;
+            }
+        }
+        &_next{
+            transform: rotate(-90deg);
+        }
+        &_prev{
+            transform: rotate(90deg);
+        }
+    }
     &_img{
+        margin-top: 110px;
+        position: relative;
         background-image: url(./img/buisnesstypes.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -532,12 +557,12 @@ ul{
         font-size: 36px;
         font-weight: 600;
         font-family: 'Montserrat', sans-serif;
-        padding-top: 60px;
-        padding-bottom: 39px;
+        position: absolute;
+        top: -60px;
     }
     &_types{
         overflow: hidden;
-        transform: translateY(-200px);
+        transform: translateY(-220px);
     }
     &_track{
         transition: .5s;
@@ -577,9 +602,6 @@ ul{
         }
     }
 }
-.irs-min,.irs-to,.irs-from,.irs-max{
-    visibility: hidden !important;
-}
 .__enco_filter_row_group_header{
     font-size: 11px;
     letter-spacing: 1px;
@@ -604,68 +626,6 @@ ul{
     width: 1px;
     background-color: #c5c5c5;
 }
-.range-slider{
-    height: 0px !important;
-}
-.__enco_filter{
-    &_row{
-        &_group{
-            display: flex;
-            margin-bottom: 29px;
-            &_item1{
-                & > input:checked + label::before{
-                    border: 5px solid #fff;
-                }
-                & > label:hover{
-                    color: #fff;
-                    background: #919CA2;
-                }
-                & + & > label{
-                    border-left: 1px solid #DADADA;
-                }
-                & > input{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    opacity: 0
-                }
-                & > input:checked + label{
-                    background: #003457;
-                    color: #fff;
-                }
-                & > label{
-                    font-family: 'OpenSans', sans-serif;
-                    padding: 15px 15px 15px 45px;
-                    background: #fff;
-                    display: block;
-                    cursor: pointer;
-                    font-size: 15px;
-                    line-height: 13px;
-                    color: #2F2F2F;
-                    position: relative;
-                    border-radius: 2px;
-                    -webkit-transition: all 0.2s linear;
-                    -o-transition: all 0.2s linear;
-                    transition: all 0.2s linear;
-                }
-                & > label::before{
-                    content: "";
-                    height: 19px;
-                    width: 19px;
-                    position: absolute;
-                    top: 12px;
-                    left: 20px;
-                    border-radius: 3px;
-                    border: 1px solid #B3B3B3;
-                    box-sizing: border-box;
-                    -webkit-transition: all 0.2s linear;
-                    -o-transition: all 0.2s linear;
-                    transition: all 0.2s linear;
-                }
-            }
-        }
-    }
-}
 .__enco_form_row{
     display: flex;
     margin-bottom: 20px;
@@ -676,65 +636,6 @@ ul{
     display: flex;
     justify-content: space-between;
 }
-
-
-.custom-select-options::after{
-    background: url(./img/arrowbl.svg) !important;
-}
-.__enco_form{
-    &_desc1,&_desc2{
-        display: flex;
-        align-items: center;
-    }
-    &_desc2{
-        & + &{
-            margin-left: 10px;
-        }
-    }
-    &_var{
-        padding: 10px 20px;
-        font-weight: 700;
-        font-size: 12px;
-        background-color: #333333;
-        border-radius: 2px;
-        color: #fff;
-        text-transform: uppercase;
-    }
-    &_clear{
-        display: flex;
-        align-items: center;
-        background: none;
-        border: none;
-        outline: none;
-        font-size: 13px;
-        text-transform: uppercase;
-        margin-left: 20px;
-        font-weight: 400;
-        color: #343434;
-        cursor: pointer;
-        letter-spacing: 1px;
-        & + &{
-            margin-left: 10px;
-        }
-    }
-    &_par{
-        margin-right: 20px;
-    }
-    &_videl{
-        margin-right: 25px;
-    }
-    &_par_desc{
-        display: flex;
-        align-items: center;
-        &_p{
-            margin-right: 11px;
-            font-size: 13px;
-            letter-spacing: 1px;
-            color: #343434;
-            text-transform: uppercase;
-        }
-    }
-}
 .enco_p{
 margin-left: 8px;
 font-size: 13px;
@@ -743,7 +644,6 @@ font-weight: 400;
 line-height: 13px;
 letter-spacing: 1px;
 text-align: left;
-
 }
 .w200{
     width: 212px;
@@ -771,6 +671,10 @@ text-align: left;
 .maxh{
     max-height: 245px !important;
 }
+.phone:hover > svg >path{
+    stroke: #fff;
+    fill: #fff;
+}
 .__enco_find{
     background-color: var(--white9);
     display: flex;
@@ -783,13 +687,18 @@ text-align: left;
     }
     &_btn{
         padding: 9px 27px;
-        border: solid 2px #222D4F;
+        border: solid 2px #474747;
         border-radius: 2px;
         background-color: #fff;
         font-size: 12px;
         font-weight: 700;
         color: #474747;
         text-transform: uppercase;
+        transition: .3s ease;
+        &:hover{
+            background-color: #474747;
+            color: #fff;
+        }
     }
     &_all{
         display: flex;
@@ -1463,7 +1372,13 @@ button{
         display: flex;
         justify-content: center;
     }
-
+    .__enco_business_header{
+        display: flex;
+        justify-content: center;
+        top: 40px;
+        left: 30px;
+        color: #fff;
+    }
 }
 @media (max-width:540px) {
     .__ecnocom_main_header{

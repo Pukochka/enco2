@@ -455,49 +455,7 @@ class CustomSelect {
 
 
 // initialisation
-if (window.innerWidth < 768) {
-    SliderMobile.init()
-    const car1 = new CarouselTouchScreenNoBtn('.stocks-inner', '.stocks-flex')
-    car1.init()
-    document.querySelector('.news-info').remove()
-    const car2 = new CarouselTouchScreenNoBtn('.news-inner', '.news-items')
-    car2.init()
-}
-Accordions.init()
-document.querySelectorAll('.custom-select').forEach(el => {
-    new CustomSelect(el)
-});
-if (document.querySelector('.banner-top')) {
-    BannerTop.init()
-}
-function topAnimate() {
-    if (pageYOffset > 1) {
-        document.querySelector('.header-desktop').classList.add('scrolled');
-        if (document.querySelector('.banner-top')) {
-            BannerTop.bannerBlock.remove();
-        }
-        document.querySelector('main').classList.add('scrolled');
-    } else {
-        document.querySelector('.header-desktop').classList.remove('scrolled');
-        document.querySelector('main').classList.remove('scrolled');
-    }
-}
-window.addEventListener('scroll',topAnimate)
-if (document.querySelector('.filter-hidden')) {
-    if (window.innerWidth > 768) {
-        HiddenFilters.init()
-    } else {
-        document.querySelector('.filter-visible-more').addEventListener('click', () => {
-            document.body.classList.add('overflow');
-            document.querySelector('.filter').classList.add('active');
-        });
-        document.querySelector('.filter-mobile-close').addEventListener('click', () => {
-            document.body.classList.remove('overflow');
-            document.querySelector('.filter').classList.remove('active');
-        })
-    }
 
-}
 
 
 });
