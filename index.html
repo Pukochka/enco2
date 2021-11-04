@@ -174,8 +174,8 @@
       
         <nav class="mobile-menu">
         <div class="mobile-accordion accordion">
-          <p class="mobile-link-title">О застройщике</p>
-          <div class="accordion-block">
+          <p class="mobile-link-title first1">О застройщике</p>
+          <div class="accordion-vis first">
             <ul class="mobile-menu-hidden">
               <li><a href="/o-kompanii/" class="mobile-menu-link">О компании</a></li>
               <li><a href="/client/" class="mobile-menu-link">Клиентский сервис</a></li>
@@ -190,19 +190,19 @@
           </div>
         </div>
         <div class="mobile-accordion accordion">
-          <p class="mobile-link-title">Выбрать комплекс</p>
-          <div class="accordion-block">
+          <p class="mobile-link-title second2">Выбрать комплекс</p>
+          <div class="accordion-vis second">
             <ul class="mobile-menu-hidden images">
-              <li><a href="/zhilye-kompleksy/zk-ayvazovskii/" class="mobile-menu-img"><img src="/local/templates/new/images/pic/aivazovsc-logo-footer.svg" alt=""></a></li>
-              <li><a href="/zhilye-kompleksy/zhr-nikolskiy/" class="mobile-menu-img"><img src="/local/templates/new/images/pic/nikolsk-logo-footer.svg" alt=""></a></li>
-              <li><a href="/zhilye-kompleksy/zhk-preobrazhenskii-na-moskovskom/" class="mobile-menu-img"><img src="/local/templates/new/images/pic/preobr-logo-mosc-footer.svg" alt=""></a></li>
-              <li><a href="/zhilye-kompleksy/zhk-preobrazhenskii/" class="mobile-menu-img"><img src="/local/templates/new/images/pic/probr-logo-footer.svg" alt=""></a></li>
+              <li><a href="/zhilye-kompleksy/zk-ayvazovskii/" class="mobile-menu-img"><img src="./img/logoaiva.svg" alt=""></a></li>
+              <li><a href="/zhilye-kompleksy/zhr-nikolskiy/" class="mobile-menu-img"><img src="./img/logonik.svg" alt=""></a></li>
+              <li><a href="/zhilye-kompleksy/zhk-preobrazhenskii-na-moskovskom/" class="mobile-menu-img"><img src="./img/logoprobr.svg" alt=""></a></li>
+              <li><a href="/zhilye-kompleksy/zhk-preobrazhenskii/" class="mobile-menu-img"><img src="./img/logopreobr1.svg" alt=""></a></li>
             </ul>
           </div>
         </div>
         <div class="mobile-accordion accordion">
-          <p class="mobile-link-title">Выбрать квартиру</p>
-          <div class="accordion-block">
+          <p class="mobile-link-title third3">Выбрать квартиру</p>
+          <div class="accordion-vis third">
             <ul class="mobile-menu-hidden">
               <li><a href="/vybrat-kvartiru/" class="mobile-menu-link">По параметрам</a></li>
               <li><a href="/vybrat-kvartiru/?page-url=%2F&mincost=2+150+000&maxcost=12+100+000&areas%5B%5D=&minsquare=24&maxsquare=172&quarter=&remont=&kitchen=all&second=Y" class="mobile-menu-link">Вторичные квартиры</a></li>
@@ -215,8 +215,8 @@
           </div>
         </div>
         <div class="mobile-accordion accordion">
-          <p class="mobile-link-title">Как купить</p>
-          <div class="accordion-block">
+          <p class="mobile-link-title forth4">Как купить</p>
+          <div class="accordion-vis forth">
             <ul class="mobile-menu-hidden">
               <li><a href="/uznat-kak-kupit/ipoteka/" class="mobile-menu-link">Ипотечный центр «ЭНКО»</a></li>
               <li><a href="/obmen-kvartiry/" class="mobile-menu-link">Обмен квартиры</a></li>
@@ -254,7 +254,7 @@
                         </div>
                     </div>
                     <div class="__ecnocom_main_btns">
-                        <div class="__ecnocom_main_btns_item1"><a href="#">Заказать звонок</a></div>
+                        <div class="__ecnocom_main_btns_item1"><a id="call" href="#">Заказать звонок</a></div>
                         <div class="__ecnocom_main_btns_item2"><a href="#">скачать презентацию</a></div>
                     </div>
                 </div>
@@ -647,80 +647,80 @@
                 больше параметров
               </div>
             </div>
-          </div>
-          <div class="filter-hidden">
-            <div class="filter-hidden-content">
-              <div class="filter-visible-row">
-                <div class="kitchen-form">
-                  <p class="form-title">кухня</p>
-                  <div class="custom-select">
-                    <div class="custom-select-title" data-name="" data-values=""></div>
-                    <div class="custom-select-options">
-                      <div class="custom-select-option">
-                        <input type="checkbox" name="kitchens[]" id="kitchen-2" value="925"  data-value="Отдельная кухня">
-                        <label for="kitchen-2">Отдельная кухня</label>
-                      </div>
-                      <div class="custom-select-option">
-                        <input type="checkbox" name="kitchens[]" id="kitchen-3" value="927"  data-value="Кухня — гостиная">
-                        <label for="kitchen-3">Кухня — гостиная</label>
+            <div class="filter-hidden-more">
+                <div class="filter-hidden-content">
+                  <div class="filter-visible-row">
+                    <div class="kitchen-form">
+                      <p class="form-title">кухня</p>
+                      <div class="custom-select">
+                        <div class="custom-select-title" data-name="" data-values=""></div>
+                        <div class="custom-select-options">
+                          <div class="custom-select-option">
+                            <input type="checkbox" name="kitchens[]" id="kitchen-2" value="925"  data-value="Отдельная кухня">
+                            <label for="kitchen-2">Отдельная кухня</label>
+                          </div>
+                          <div class="custom-select-option">
+                            <input type="checkbox" name="kitchens[]" id="kitchen-3" value="927"  data-value="Кухня — гостиная">
+                            <label for="kitchen-3">Кухня — гостиная</label>
+                          </div>
+                        </div>
                       </div>
                     </div>
+                              <div class="finishing-form">
+                      <p class="form-title">отделка</p>
+                      <div class="form-checkbox-finishing">
+                        <input type="radio" name="renovation" value="" id="finishing-all" checked>
+                        <label for="finishing-all">Все</label>
+                      </div>
+                      <div class="form-checkbox-finishing">
+                        <input type="radio" name="renovation" value="yes" id="finishing-yes" >
+                        <label for="finishing-yes">Да</label>
+                      </div>
+                      <div class="form-checkbox-finishing">
+                        <input type="radio" name="renovation" value="no" id="finishing-no" >
+                        <label for="finishing-no">Нет</label>
+                      </div>
+                    </div>
+                              <div class="parking-type-checkbox">
+                      <input type="checkbox" id="parking" name="parking" value="on" >
+                      <label for="parking">Паркинг</label>
+                    </div>
                   </div>
-                </div>
-                          <div class="finishing-form">
-                  <p class="form-title">отделка</p>
-                  <div class="form-checkbox-finishing">
-                    <input type="radio" name="renovation" value="" id="finishing-all" checked>
-                    <label for="finishing-all">Все</label>
+                  <div class="filter-visible-row">
+                    <div class="floor-range">
+                      <p class="form-title">Этаж</p>
+                      <div>
+                        <div class="price-range-fields">
+                          <input type="text" id="floor-input-from" name="minfloor" class="rage-input" value="0" data-min="1" aria-label="floor-min" data-start="1"/>
+                          <label for="floor-input-from" class="input-from-label floor"></label>
+                          <hr>
+                          <input type="text" id="floor-input-to" name="maxfloor" class="rage-input" value="0" data-max="24" aria-label="floor-max" data-end="24"/>
+                          <label for="floor-input-to" class="input-to-label floor"></label>
+                        </div>
+                        <div class="range-slider">
+                          <input type="text" class="floor-range-slider" value="" aria-label="floor-range"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="optional-form">
+                      <div class="optional-checkbox">
+                        <input type="checkbox" id="not-first-flor" name="floor_not_first" value="1" >
+                        <label for="not-first-flor">Не первый этаж</label>
+                      </div>
+                      <div class="optional-checkbox">
+                        <input type="checkbox" id="not-last-flor" name="floor_not_end" value="24" >
+                        <label for="not-last-flor">Не последний этаж</label>
+                      </div>
+                                </div>
                   </div>
-                  <div class="form-checkbox-finishing">
-                    <input type="radio" name="renovation" value="yes" id="finishing-yes" >
-                    <label for="finishing-yes">Да</label>
-                  </div>
-                  <div class="form-checkbox-finishing">
-                    <input type="radio" name="renovation" value="no" id="finishing-no" >
-                    <label for="finishing-no">Нет</label>
-                  </div>
-                </div>
-                          <div class="parking-type-checkbox">
-                  <input type="checkbox" id="parking" name="parking" value="on" >
-                  <label for="parking">Паркинг</label>
                 </div>
               </div>
-              <div class="filter-visible-row">
-                <div class="floor-range">
-                  <p class="form-title">Этаж</p>
-                  <div>
-                    <div class="price-range-fields">
-                      <input type="text" id="floor-input-from" name="minfloor" class="rage-input" value="0" data-min="1" aria-label="floor-min" data-start="1"/>
-                      <label for="floor-input-from" class="input-from-label floor"></label>
-                      <hr>
-                      <input type="text" id="floor-input-to" name="maxfloor" class="rage-input" value="0" data-max="24" aria-label="floor-max" data-end="24"/>
-                      <label for="floor-input-to" class="input-to-label floor"></label>
-                    </div>
-                    <div class="range-slider">
-                      <input type="text" class="floor-range-slider" value="" aria-label="floor-range"/>
-                    </div>
-                  </div>
-                </div>
-                <div class="optional-form">
-                  <div class="optional-checkbox">
-                    <input type="checkbox" id="not-first-flor" name="floor_not_first" value="1" >
-                    <label for="not-first-flor">Не первый этаж</label>
-                  </div>
-                  <div class="optional-checkbox">
-                    <input type="checkbox" id="not-last-flor" name="floor_not_end" value="24" >
-                    <label for="not-last-flor">Не последний этаж</label>
-                  </div>
-                            </div>
+              <div class="filter-mobile-close">
+                <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="26.5" cy="26.5" r="26.5" fill="#606060"/>
+                  <path d="M17.5 17.3027L36.5 36.3027M17.5 36.3027L36.5 17.3027" stroke="white" stroke-width="3"/>
+                </svg>
               </div>
-            </div>
-          </div>
-          <div class="filter-mobile-close">
-            <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="26.5" cy="26.5" r="26.5" fill="#606060"/>
-              <path d="M17.5 17.3027L36.5 36.3027M17.5 36.3027L36.5 17.3027" stroke="white" stroke-width="3"/>
-            </svg>
           </div>
         </form>
       </section>
@@ -934,7 +934,7 @@
                                 <svg class="svg1" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6 1V11M11 6H1" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
-                                <svg class="svg11" width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="svg11 svghide" width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 1H1" stroke="white" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
                             </div>
@@ -948,7 +948,7 @@
                                 <svg class="svg2" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6 1V11M11 6H1" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
-                                <svg class="svg22" width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="svg22 svghide" width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 1H1" stroke="white" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
                             </div>
@@ -962,7 +962,7 @@
                                 <svg class="svg3" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6 1V11M11 6H1" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
-                                <svg class="svg33" width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="svg33 svghide" width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 1H1" stroke="white" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
                             </div>
@@ -975,11 +975,38 @@
                         <img class="__enco_question_container_cpecial_img" src="./img/spec.png" alt="">
                         <div class="__enco_question_container_cpecial_header">Есть вопросы?</div>
                         <div class="__enco_question_container_cpecial_desc">Позвоните по номеру +7-932-323-10-81 или заполните форму, чтобы получить консультацию нашего специалиста</div>
-                        <div class="__enco_question_container_cpecial_btn"><a href="#">Заказать звонок</a></div>
+                        <div class="__enco_question_container_cpecial_btn"><a id="call">Заказать звонок</a></div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="__enco_call_modal">
+        <div class="modal_mask"></div>
+        <div class="__enco_call_conteiner_modal" data-time="15m">
+            <div class="__enco_call_modal_btn">&times;</div>
+            <form action="/ajax/forms.php" data-form-recaptcha>
+                <!-- добавление класса not_in_place если нет менеджеров -->
+                <input type="hidden" name="form-id" value="1">
+                <input type="hidden" name="action" value="call">
+                <input type="hidden" name="page_url" value="https://enco72.ru/">
+                <input type="hidden" name="page_title" value="Главная">
+                <input type="hidden" name="flat_id" value="">
+                <input type="hidden" name="flat_id_c" value="">
+                <input type="text" placeholder="+7(___)___-__-__" autofocus="autofocus" class="large_back_call_input">
+ 
+                <div class="large_back_call_panel">
+                    <div class="large_back_call_panel_block">
+                        <span class="large_back_call_info">Закажите обратный звонок —<br> перезвоним в течении 24 часов.</span>
+                        <button type="submit" class="button_standart shaded large_back_call_send relative">
+                        Заказать звонок
+                        <a href="#agreement" class="red a_form_agreement">*</a>
+                        <div class="loading_enco color-fff"><div><div></div><div></div><div></div></div></div></button>
+                    </div>
+                    <div class="clearfix disclame">*Отправляя сведения Пользователь предоставляет своё согласие на обработку персональных данных в соответствии с действующим законодательством РФ, а также подтверждает, что ознакомлен с Положением о порядке хранения и защиты персональных данных пользователей.</div>
+              </div>
+            </form>
+          </div>
     </div>
     <div class="__enco_pay">
         <div class="wrapper">
@@ -989,7 +1016,7 @@
                     <div class="__enco_pay_conteiner_item_inner">
                         <p class="__enco_pay_conteiner_item_header">Оплата 100% наличными</p>
                         <p class="__enco_pay_conteiner_item_text">Оплатить покупку можно сразу наличными или кредитными средствами. Важно, чтобы расчет был единоразовым.</p>
-                        <div class="__enco_pay_conteiner_item_btn"><a href="#">консультация</a></div>
+                        <div class="__enco_pay_conteiner_item_btn"><a class="call1">консультация</a></div>
                     </div>
                 </div>
                 <div class="__enco_pay_conteiner_group">
@@ -997,14 +1024,14 @@
                         <div class="__enco_pay_conteiner_item_inner">
                             <p class="__enco_pay_conteiner_item_header">Оплата 100% наличными</p>
                             <p class="__enco_pay_conteiner_item_text">Если не планируете обременять себя надолго, то воспользуйтесь рассрочкой.</p>
-                            <div class="__enco_pay_conteiner_item_btn"><a href="#">консультация</a></div>
+                            <div class="__enco_pay_conteiner_item_btn"><a class="call1">консультация</a></div>
                         </div>
                     </div>
                     <div class="__enco_pay_conteiner_item">
                         <div class="__enco_pay_conteiner_item_inner">
                             <p class="__enco_pay_conteiner_item_header">Оплата 100% наличными</p>
                             <p class="__enco_pay_conteiner_item_text">Если не планируете обременять себя надолго, то воспользуйтесь рассрочкой.</p>
-                            <div class="__enco_pay_conteiner_item_btn"><a href="#">консультация</a></div>
+                            <div class="__enco_pay_conteiner_item_btn"><a class="call1">консультация</a></div>
                         </div>
                     </div>
                 </div>
@@ -1029,7 +1056,7 @@
                             <fieldset>
                                 <div class="__enco_call_conteiner_posabs">
                                     <label class="__enco_call_conteiner_label" for="online_phone">Телефон<span>*</span></label>
-                                    <input class="__enco_call_conteiner_phone" placeholder="+7(___)___-__-__" id="online_phone" name="phone" type="tel" maxlength="12" pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}">  
+                                    <input class="__enco_call_conteiner_phone" type="text">  
                                 </div>
                             </fieldset> 
                         </div>
@@ -1286,6 +1313,8 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js" type="text/javascript"></script>
     <script src="script.js"></script>
+    <script src="js.js"></script>
 </body>
 </html>

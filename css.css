@@ -3061,8 +3061,15 @@ main.scrolled {
   }
 
   .mobile-link-title:after {
+    content: "";
+    display: block;
     height: 30px;
     width: 30px;
+    background: url(./img/btnarrow.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    top: -2px;
   }
 
   .mobile-accordion.active .mobile-link-title:after {
@@ -3481,7 +3488,8 @@ html .modal .fancybox-slide .fancybox-button--close.fixed {
 }
 
 .large_back_call.type-modal{
-  display: none;
+  display: inline;
+  position: fixed;
 }
 
 .large_back_call.type-simple-text{

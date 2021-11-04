@@ -20,6 +20,7 @@
 body{
     font-family: 'Open Sans', sans-serif;
     overflow-x: hidden;
+    position: relative;
 }
 p{
     margin: 0;;
@@ -275,6 +276,16 @@ ul{
         margin-bottom: 25px;
     }
 
+}
+#call{
+    cursor: pointer;
+}
+.svgvis{
+    display: inline;
+}
+.svghide{
+    display: none;
+    transition: .3s ease;
 }
 .conf{
     font-size: 11px;
@@ -955,6 +966,17 @@ text-align: left;
     background-color: #fff !important;
     border-radius: 2px;
 }
+
+.filter-visible-more::after{
+    width: 14px !important;
+    height: 8px !important;
+}
+.filter-hidden-more{
+    box-shadow: 0 0 22px rgba(0, 0, 0, 0.205);
+    position: absolute;
+    width: 100%;
+    z-index: 400;
+}
 .__enco_question{
     background-color: var(--white6);
     &_header{
@@ -1051,10 +1073,14 @@ text-align: left;
                 font-weight: 700;
                 border-radius: 2px;
                 text-transform: uppercase;
-                margin-bottom: 43px;
+                margin-bottom: 30px;
                 &> a{
                     color: #fff;
-                    padding: 15px 62px;
+                    width: 246px;
+                    height: 48px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     background-color: var(--gold);
                     border: solid 1px var(--gold);
                     transition: .3s ease;
@@ -1067,6 +1093,81 @@ text-align: left;
         }
     }
     
+}
+.large_back_call_input{
+    position: absolute;
+    left: 80px;
+    top: 50px;
+    max-width: 800px !important;
+    height:100px !important;
+    font-size: 70px !important;
+    &::placeholder{
+        font-size: 70px !important;
+    }
+}
+.modal_mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99995;
+}
+.large_back_call_panel_block{
+    display: flex;
+    flex-wrap: wrap;
+}
+.__enco_call_conteiner_modal{
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 342px;
+    background-position: 98.5% 31px;
+    box-shadow: 1.5px 2.598px 5px rgba(0,0,0,.07), inset 0 0 0 1px #f5f5f5;
+    width: 1128px;
+    height: 348px;
+    position: relative;
+    z-index: 99996;
+    border-radius: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.mobile-menu-vis
+.active_modal{
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: .5s ease-in-out opacity;
+}
+.__enco_call_modal{
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s ease-in-out opacity;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(31, 30, 30, 0.616);
+    z-index: 99994;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &_btn{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        right: 0;
+        top: -70px;
+        background-color: transparent;
+        transition: .3s ease background-color;
+        font-size: 60px;
+        color: #fff;
+        &:hover{
+            background-color: var(--bluewt1);
+        }
+    }
 }
 // .hr5{
 //     width: 715px;
@@ -1235,6 +1336,7 @@ fieldset{
 }
 button{
     outline: none;
+    cursor: pointer;
 }
 .polic{
     display: flex;
@@ -1280,6 +1382,16 @@ button{
     }
 }
 @media (max-width:900px) {
+    .large_back_call_panel{
+        bottom: 30px !important;
+    }
+    .large_back_call_input{
+        top: 30px !important;
+        height: 80px !important;
+        &::placeholder{
+            font-size: 50px !important;
+        }
+    }
     .__enco_char_video{
         overflow: hidden;
     }
@@ -1308,6 +1420,17 @@ button{
 }
 
 @media (max-width:778px) {
+    .large_back_call_input{
+        left:30px !important;
+        height: 100px !important;
+        font-size: 30px !important;
+        &::placeholder{
+            font-size: 30px !important;
+        }
+    }
+    .large_back_call_panel{
+        left: 30px !important;
+    }
     .polic{
         display: none;
     }
@@ -1391,6 +1514,15 @@ button{
     }
 }
 @media (max-width:540px) {
+    .__enco_env_proj_item {
+        height: 360px;
+    }
+    .clearfix{
+        margin-top: 10px !important;
+    }
+    .large_back_call_info{
+        font-size: 18px !important;
+    }
     .__ecnocom_main_header{
         font-size: 40px;
     }
@@ -1427,8 +1559,17 @@ button{
     .__enco_char_header{
         font-size: 30px;
     }
+    .__enco_question_container_cpecial_btn > a{
+        width: 210px;
+    }
 }
 @media (max-width:400px) {
+    .large_back_call_input{
+        top: 0px !important;
+        &::placeholder{
+            font-size: 30px !important;
+        }
+    }
     .__enco_char_list_item_header{
         font-size: 11px;
     }
