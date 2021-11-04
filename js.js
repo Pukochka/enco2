@@ -343,58 +343,7 @@ const Accordions = {
         element.querySelector('.accordion-block').style.maxHeight = null
     }
 }
-const SliderMobile = {
-    slides: [],
-    next: null,
-    prev: null,
-    init() {
-        document.querySelectorAll('.inner-slide').forEach((el, indx) => {
-           this.slides.push(el);
-           if (indx !== 0) {
-               el.classList.add('next');
-           } else el.classList.add('active');
-        });
-        this.next = document.querySelector('.btn-right');
-        this.prev = document.querySelector('.btn-left');
-        this.updateBtns(0)
-        this.next.addEventListener('click', () => {
-            this.showNextSlide();
-        });
-        this.prev.addEventListener('click', () => {
-            this.showPrevSlide();
-        });
-    },
-    showNextSlide() {
-        const current = this.slides.find(el => el.classList.contains('active'));
-        const currentIndex = this.slides.indexOf(current);
-        if (currentIndex + 1 < this.slides.length) {
-            current.classList.remove('active');
-            current.classList.add('prev');
-            this.slides[this.slides.indexOf(current) + 1].classList.remove('next');
-            this.slides[this.slides.indexOf(current) + 1].classList.add('active');
-            this.updateBtns(currentIndex+1)
-        }
-    },
-    showPrevSlide() {
-        const current = this.slides.find(el => el.classList.contains('active'));
-        const currentIndex = this.slides.indexOf(current);
-        if (currentIndex > 0) {
-            current.classList.remove('active');
-            current.classList.add('next');
-            this.slides[this.slides.indexOf(current) - 1].classList.remove('prev');
-            this.slides[this.slides.indexOf(current) - 1].classList.add('active');
-            this.updateBtns(currentIndex-1)
-        }
-    },
-    updateBtns(index) {
-        if (index === 0) {
-            this.prev.classList.add('disable');
-        } else this.prev.classList.remove('disable');
-        if (index === this.slides.length - 1) {
-            this.next.classList.add('disable');
-        } else this.next.classList.remove('disable');
-    }
-}
+
 class Carousel {
     constructor(innerBlock, movedBlock) {
         this.visibleBlock = document.querySelector(innerBlock);
@@ -452,82 +401,11 @@ class Carousel {
         }, {once: true});
     }
 }
-class CarouselTouchScreenNoBtn extends Carousel{
-    constructor(innerBlock, movedBlock) {
-        super(innerBlock, movedBlock);
-    }
-    init() {
-        super.init();
-        this.movedBlock.addEventListener('touchstart', (e) => this.createMovingStructure(e));
-        this.hideSlides();
-    }
-    createMovingStructure(e) {
-        this.startX = e.touches[0].pageX;
-        this.currentPos = this.movedBlock.offsetLeft;
-        this.movedBlock.style.transition = 'none';
-        this.movedBlock.addEventListener('touchmove', this.event);
-        this.clear();
-    }
-    clear() {
-        this.movedBlock.addEventListener('touchend', () => {
-            this.movedBlock.removeEventListener('touchmove', this.event);
-            this.movedBlock.style.left = `-${Math.abs(Math.round(this.movedBlock.offsetLeft / (this.slideWidth + this.margin))) * (this.slideWidth + this.margin)}px`
-        }, {once: true});
-        super.clear();
-    }
-    liveMoving(e) {
-        this.movedBlock.style.left = `${this.currentPos + (e.touches[0].pageX - this.startX)}px`;
-        super.liveMoving(e);
-        this.hideSlides();
-    }
-}
+
 
 
 // initialisation
-if (window.innerWidth < 768) {
-    SliderMobile.init()
-    const car1 = new CarouselTouchScreenNoBtn('.stocks-inner', '.stocks-flex')
-    car1.init()
-    document.querySelector('.news-info').remove()
-    const car2 = new CarouselTouchScreenNoBtn('.news-inner', '.news-items')
-    car2.init()
-}
-Accordions.init()
-document.querySelectorAll('.custom-select').forEach(el => {
-    new CustomSelect(el)
-});
-if (document.querySelector('.banner-top')) {
-    BannerTop.init()
-}
-function topAnimate() {
-    if (pageYOffset > 1) {
-        document.querySelector('main').classList.add('scrolled');
-        document.querySelector('.header-desktop').classList.add('scrolled');
-        if (document.querySelector('.banner-top')) {
-            BannerTop.bannerBlock.remove();
-        }
-        
-    } else {
-        document.querySelector('.header-desktop').classList.remove('scrolled');
-        document.querySelector('main').classList.remove('scrolled');
-    }
-}
-window.addEventListener('scroll',topAnimate)
-if (document.querySelector('.filter-hidden')) {
-    if (window.innerWidth > 768) {
-        HiddenFilters.init()
-    } else {
-        document.querySelector('.filter-visible-more').addEventListener('click', () => {
-            document.body.classList.add('overflow');
-            document.querySelector('.filter').classList.add('active');
-        });
-        document.querySelector('.filter-mobile-close').addEventListener('click', () => {
-            document.body.classList.remove('overflow');
-            document.querySelector('.filter').classList.remove('active');
-        })
-    }
 
-}
 
 // Rages
 

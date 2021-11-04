@@ -1521,7 +1521,20 @@ ul {
   padding-right: 20px;
 }
 
-.mobile-menu-vis
+.custom-select-vis {
+  background-color: #fff;
+  z-index: 400;
+  position: absolute;
+  width: 100%;
+}
+
+.custom-select-viss {
+  background-color: #fff;
+  z-index: 400;
+  position: absolute;
+  width: 100%;
+}
+
 .active_modal {
   visibility: visible !important;
   opacity: 1 !important;
