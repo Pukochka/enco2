@@ -560,6 +560,116 @@ ul {
   color: #fff;
 }
 
+.next, .prev {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #f6f6f6;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 200;
+  cursor: pointer;
+}
+
+.next {
+  bottom: 0;
+  left: 80px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.next:hover {
+  background-color: var(--gold);
+}
+
+.next:hover > svg > path {
+  stroke: #fff;
+}
+
+.prev {
+  bottom: 0;
+  left: 30px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.prev:hover {
+  background-color: var(--gold);
+}
+
+.prev:hover > svg > path {
+  stroke: #fff;
+}
+
+.next1, .prev1 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #f6f6f6;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 200;
+  cursor: pointer;
+}
+
+.next1 {
+  bottom: 0;
+  left: 250px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.next1:hover {
+  background-color: var(--gold);
+}
+
+.next1:hover > svg > path {
+  stroke: #fff;
+}
+
+.prev1 {
+  bottom: 0;
+  left: 200px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.prev1:hover {
+  background-color: var(--gold);
+}
+
+.prev1:hover > svg > path {
+  stroke: #fff;
+}
+
+.slick-list {
+  height: 200px !important;
+}
+
 .__enco_env {
   background-color: var(--white6);
 }
@@ -635,8 +745,9 @@ ul {
 .__enco_env_desc2 {
   position: relative;
   margin-top: 33px;
-  padding-top: 49px;
+  padding-top: 50px;
   background-color: #fff;
+  padding-bottom: 20px;
 }
 
 .__enco_env_track {
@@ -649,30 +760,24 @@ ul {
 
 .__enco_env_proj {
   overflow: hidden;
-}
-
-.__enco_env_proj_track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-.__enco_env_proj_item {
-  min-width: 33%;
-  height: 270px;
   position: relative;
 }
 
+.__enco_env_proj_item {
+  height: 280px;
+}
+
+.__enco_env_proj_item_wrap {
+  max-width: 270px;
+  margin: 0 auto;
+}
+
 .__enco_env_proj_item_img {
-  position: absolute;
   top: 0px;
   left: 30px;
 }
 
 .__enco_env_proj_item_p {
-  position: absolute;
   top: 40px;
   left: 30px;
   font-size: 17px;
@@ -734,6 +839,10 @@ ul {
 .__enco_business_track_item:hover .svg > path {
   fill: #fff;
   stroke: #fff;
+}
+
+.slick-track {
+  height: 131px;
 }
 
 .__enco_business {
@@ -802,17 +911,11 @@ ul {
 .__enco_business_track {
   -webkit-transition: .5s;
   transition: .5s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transform: translateX(-10px);
-          transform: translateX(-10px);
   z-index: 200;
 }
 
 .__enco_business_track_item {
   position: relative;
-  min-width: 228px;
   height: 131px;
   background-color: #fff;
   border-radius: 5px;
@@ -1833,6 +1936,12 @@ button {
 }
 
 @media (max-width: 1132px) {
+  .prev1 {
+    left: 30px;
+  }
+  .next1 {
+    left: 80px;
+  }
   .__enco_pay_conteiner {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -2029,9 +2138,6 @@ button {
 }
 
 @media (max-width: 540px) {
-  .__enco_env_proj_item {
-    height: 360px;
-  }
   .clearfix {
     margin-top: 10px !important;
   }
@@ -2066,9 +2172,6 @@ button {
   }
   .__enco_question_container_answer_item_p {
     width: 250px !important;
-  }
-  .__enco_env_proj_item {
-    min-width: 46%;
   }
   .__enco_char_header {
     font-size: 30px;

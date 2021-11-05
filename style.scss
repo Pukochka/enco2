@@ -413,6 +413,81 @@ ul{
     background-color: var(--gray) !important;
     color: #fff;
 }
+.next,.prev{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #f6f6f6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    cursor: pointer;
+}
+.next{
+    bottom: 0;
+    left: 80px;
+    transform: rotate(-90deg);
+    transition: .3s ease;
+    &:hover{
+        background-color: var(--gold);
+    }
+    &:hover >svg > path{
+        stroke: #fff;
+    }
+}
+.prev{
+    bottom: 0;
+    left: 30px;
+    transform: rotate(90deg);
+    transition: .3s ease;
+    &:hover{
+        background-color: var(--gold);
+    }
+    &:hover >svg > path{
+        stroke: #fff;
+    }
+}
+.next1,.prev1{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #f6f6f6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    cursor: pointer;
+}
+.next1{
+    bottom: 0;
+    left: 250px;
+    transform: rotate(-90deg);
+    transition: .3s ease;
+    &:hover{
+        background-color: var(--gold);
+    }
+    &:hover >svg > path{
+        stroke: #fff;
+    }
+}
+.prev1{
+    bottom: 0;
+    left: 200px;
+    transform: rotate(90deg);
+    transition: .3s ease;
+    &:hover{
+        background-color: var(--gold);
+    }
+    &:hover >svg > path{
+        stroke: #fff;
+    }
+}
+.slick-list{
+    height: 200px !important;
+}
 .__enco_env{
     background-color: var(--white6);
     &_header{
@@ -467,8 +542,9 @@ ul{
     &_desc2{
         position: relative;
         margin-top: 33px;
-        padding-top: 49px;
+        padding-top: 50px;
         background-color: #fff;
+        padding-bottom: 20px;
         
     }
     &_track{
@@ -477,21 +553,21 @@ ul{
     }
     &_proj{
         overflow: hidden;
-        &_track{
-            display: flex;
-            transition: .5s;
-        }
+        position: relative;
         &_item{
-            min-width: 33%;
-            height: 270px;
-            position: relative;
+            // min-width: 33%;
+            height: 280px;
+            &_wrap{
+                max-width: 270px;
+                margin: 0 auto;
+            }
             &_img{
-                position: absolute;
+ 
                 top: 0px;
                 left: 30px;
             }
             &_p{
-                position: absolute;
+
                 top: 40px;
                 left: 30px;
                 font-size: 17px;
@@ -536,6 +612,9 @@ ul{
 .__enco_business_track_item:hover .svg>path{
     fill: #fff;
     stroke: #fff;
+}
+.slick-track{
+    height: 131px;
 }
 .__enco_business{
     position: relative;
@@ -587,17 +666,14 @@ ul{
     }
     &_track{
         transition: .5s;
-        display: flex;
-        transform: translateX(-10px);
         z-index: 200;
-        &_item{
-            position: relative;
-            min-width: 228px;
-            height: 131px;
-            background-color: #fff;
-            border-radius: 5px;
-            border: solid 1px #eeeeee;
-            transition: .3s ease;
+            &_item{
+                position: relative;
+                height: 131px;
+                background-color: #fff;
+                border-radius: 5px;
+                border: solid 1px #eeeeee;
+                transition: .3s ease;
             &:hover{
                 background-color: #232C4F;
                 border: solid 1px #232C4F;
@@ -1368,6 +1444,12 @@ button{
     flex-direction: row;
 }
 @media (max-width:1132px) {
+    .prev1{
+        left: 30px;
+    }
+    .next1{
+        left: 80px;
+    }
     .__enco_pay_conteiner{
         grid-template-columns: 1fr;
         grid-template-rows: 266px 266px;
@@ -1525,9 +1607,9 @@ button{
     }
 }
 @media (max-width:540px) {
-    .__enco_env_proj_item {
-        height: 360px;
-    }
+    // .__enco_env_proj_item {
+    //     height: 360px;
+    // }
     .clearfix{
         margin-top: 10px !important;
     }
@@ -1562,10 +1644,6 @@ button{
     }
     .__enco_question_container_answer_item_p{
         width: 250px !important;
-
-    }
-    .__enco_env_proj_item{
-        min-width: 46%;
     }
     .__enco_char_header{
         font-size: 30px;
