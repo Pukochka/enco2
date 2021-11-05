@@ -922,6 +922,7 @@ ul {
   border: solid 1px #eeeeee;
   -webkit-transition: .3s ease;
   transition: .3s ease;
+  margin-left: 20px;
 }
 
 .__enco_business_track_item:hover {
