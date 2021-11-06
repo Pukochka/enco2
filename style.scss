@@ -1211,6 +1211,7 @@ text-align: left;
 .custom-select-vis{
     background-color: #fff;
     z-index:400;
+    left: 0;
     position: absolute;
     width: 100%;
     &s{
@@ -1218,6 +1219,7 @@ text-align: left;
         z-index:400;
         position: absolute;
         width: 100%;
+        left: 0;
     }
 }
 .active_modal{

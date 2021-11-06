@@ -13,8 +13,8 @@
   position: absolute;
   right: 19px;
   top: 20px;
-  width: 12px;
-  height: 7px;
+  width: 14px;
+  height: 8px;
   background: url(./img/arrowbl.svg);
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
@@ -47,7 +47,7 @@
   left: 0;
   z-index: 200;
   overflow: hidden;
-  max-height: 0;
+  max-height:110px;
   -webkit-transition: max-height 0.4s linear;
   -o-transition: max-height 0.4s linear;
   transition: max-height 0.4s linear;
@@ -133,7 +133,7 @@
     padding: 15px 0 15px 22px;
   }
   .custom-select:after {
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 20px;
     height: 10px;

@@ -1,6 +1,12 @@
 
 $(function(){
 
+        $('#custom-select-options').hide();
+        $('#custom-select-title').click(function(e){
+            $('#custom-select-options').slideToggle();
+            $('#custom-select').toggleClass('open');
+        });
+
         $(".large_back_call_input").mask("+7(999)999-99-99");
             $(".__enco_call_conteiner_phone").mask("+7(999)999-99-99");
     
@@ -26,6 +32,7 @@ $(function(){
                         $('#title').click(function(e){
                             e.preventDefault();
                             $('.custom-select-vis').slideToggle();
+                            $('#t2').toggleClass('open');
                         });
 
                         $('.custom-select-viss').hide();
@@ -33,6 +40,7 @@ $(function(){
                         $('#title1').click(function(e){
                             e.preventDefault();
                             $('.custom-select-viss').slideToggle();
+                            $('#t1').toggleClass('open');
                         });
 
                         $('#q1').click(function(){
@@ -149,6 +157,7 @@ $(function(){
             $('.filter-hidden-more').hide();
             $('.filter-visible-more').click(function(e){
                 $('.filter-hidden-more').slideToggle();
+                $('.filter-visible-more').toggleClass('open');
             });
 
 $('.first1').click(function(){
@@ -334,6 +343,11 @@ function splitNumber(val) {
     squareInstance.update({to: val});
     $(this).prop("value", val);});
 });
+
+
+
+
+
 const HiddenFilters = {
     hiddenBlock: null,
     buttonInitiator: null,
@@ -369,47 +383,48 @@ const HiddenFilters = {
     class CustomSelect {
         constructor(selector) {
             this.select = selector
-            this.optionsBlock = this.select.querySelector('.custom-select-options')
-            this.visibleBlock = this.select.querySelector('.custom-select-title')
-            this.checkedValues = []
-            this.options = this.optionsBlock.querySelectorAll('input')
-            this._init()
+            this.optionsBlock = this.select.getElementById('custom-select-options');
+            this.visibleBlock = this.select.getElementById('custom-select-title');
+            this.checkedValues = [];
+            this.options = this.optionsBlock.querySelectorAll('input');
+            this._init();
         }
         _init() {
             this.options.forEach(el => {
                 if (el.checked) {
-                    this.checkedValues.push(el.value)
+                    this.checkedValues.push(el.value);
                 }
             });
             this.select.addEventListener('click', () => {
                 if (!this.select.classList.contains('disable')) {
-                    this.toggleOptions()
+                    this.toggleOptions();
                 }
             });
-            this.optionsBlock.style.maxHeight = null
-            this.showSelected()
+            this.optionsBlock.style.maxHeight = null;
+            this.showSelected();
             this.options.forEach(el => {
-                el.addEventListener('change', (e) => {this.changeValues(e)})
+                el.addEventListener('change', (e) => {this.changeValues(e)});
             })
         }
         showSelected() {
-            this.visibleBlock.innerHTML = this.checkedValues.join(', ')
-            this.visibleBlock.dataset.values = this.checkedValues.join(', ')
+            this.visibleBlock.innerHTML = this.checkedValues.join(', ');
+            this.visibleBlock.dataset.values = this.checkedValues.join(', ');
         }
         changeValues(e) {
             if (e.target.checked) {
-                this.checkedValues.push(e.target.dataset.value)
-                this.showSelected()
+                this.checkedValues.push(e.target.dataset.value);
+                this.showSelected();
             } else {
-                this.checkedValues = this.checkedValues.filter(el => el !== e.target.dataset.value)
-                this.showSelected()
+                this.checkedValues = this.checkedValues.filter(el => el !== e.target.dataset.value);
+                this.showSelected();
             }
         }
         toggleOptions() {
-            this.select.classList.toggle('open')
+            this.select.classList.toggle('open');
             if (!this.optionsBlock.style.maxHeight) {
-                this.optionsBlock.style.maxHeight = `${this.optionsBlock.scrollHeight}px`
+                this.optionsBlock.style.maxHeight = `${this.optionsBlock.scrollHeight}px`;
             } else {
-                this.optionsBlock.style.maxHeight = null
+                this.optionsBlock.style.maxHeight = null;
             }
-        }}
+        }
+    }

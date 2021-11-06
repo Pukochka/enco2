@@ -1628,6 +1628,7 @@ ul {
 .custom-select-vis {
   background-color: #fff;
   z-index: 400;
+  left: 0;
   position: absolute;
   width: 100%;
 }
@@ -1637,6 +1638,7 @@ ul {
   z-index: 400;
   position: absolute;
   width: 100%;
+  left: 0;
 }
 
 .active_modal {
