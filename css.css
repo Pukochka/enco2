@@ -919,6 +919,7 @@ main.scrolled {
   font-weight: bold;
   margin-right: 30px;
   cursor: pointer;
+  border: none;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;

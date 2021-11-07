@@ -773,6 +773,12 @@ text-align: left;
     stroke: #fff;
     fill: #fff;
 }
+.call1{
+    cursor: pointer;
+}
+.__enco_question_container_answer_item_btn{
+    cursor: pointer;
+}
 .__enco_find{
     background-color: var(--white9);
     display: flex;
@@ -811,6 +817,10 @@ text-align: left;
             height: 467px;
             position: relative;
             border-radius: 3px;
+            transition: .3s;
+            &:hover{
+                box-shadow: 0 0 22px #00000054;
+            }
             &_header{
                 font-family: 'Montserrat', sans-serif;
                 font-size: 22px;
@@ -1221,6 +1231,9 @@ text-align: left;
         width: 100%;
         left: 0;
     }
+}
+.__enco_find_all_item:hover{
+    box-shadow: 0 0 22px rgba(144, 144, 144, 0.253);
 }
 .active_modal{
     visibility: visible !important;
