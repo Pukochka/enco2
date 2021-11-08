@@ -29,7 +29,7 @@ $(function(){
 
                         $('.custom-select-vis').hide();
 
-                        $('#title').click(function(e){
+                        $('#t2').click(function(e){
                             e.preventDefault();
                             $('.custom-select-vis').slideToggle();
                             $('#t2').toggleClass('open');
@@ -37,7 +37,7 @@ $(function(){
 
                         $('.custom-select-viss').hide();
                         
-                        $('#title1').click(function(e){
+                        $('#t1').click(function(e){
                             e.preventDefault();
                             $('.custom-select-viss').slideToggle();
                             $('#t1').toggleClass('open');
