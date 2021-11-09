@@ -1924,6 +1924,18 @@ fieldset {
   width: auto;
 }
 
+.large_back_call_input {
+  cursor: pointer;
+}
+
+.__enco_call_conteiner_name {
+  cursor: pointer;
+}
+
+.__enco_call_conteiner_phone {
+  cursor: pointer;
+}
+
 button {
   outline: none;
   cursor: pointer;
