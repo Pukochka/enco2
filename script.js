@@ -1,8 +1,39 @@
 
 $(function(){
+        $('.offices').hide();
+        $('#map').hide();
+
+        $('#aivazovskiMap').click(function(){
+            $('#aivazovskiMap').toggleClass('act_item');
+            $('#peobraghenskMap,#peobraghenskMoskMap,#nikolskiMap').removeClass('act_item');
+        });
+        $('#peobraghenskMap').click(function(){
+            $('#peobraghenskMap').toggleClass('act_item');
+            $('#aivazovskiMap,#peobraghenskMoskMap,#nikolskiMap').removeClass('act_item');
+        });
+        $('#peobraghenskMoskMap').click(function(){
+            $('#peobraghenskMoskMap').toggleClass('act_item');
+            $('#aivazovskiMap,#peobraghenskMap,#nikolskiMap').removeClass('act_item');
+        });
+        $('#nikolskiMap').click(function(){
+            $('#nikolskiMap').toggleClass('act_item');
+            $('#peobraghenskMap,#peobraghenskMoskMap,#aivazovskiMap').removeClass('act_item');
+        });
+
+
+        // 
+
+        $('.geo').click(function(){
+            $('.geo').toggleClass('actprop');
+            $('#map').slideToggle();
+            $('.offices').slideToggle();
+        });
+        $('.mono').click(function(){
+            $('.mono').toggleClass('actprop');
+        });
 
         $('#custom-select-options').hide();
-        $('#custom-select-title').click(function(e){
+        $('#custom-select').click(function(e){
             $('#custom-select-options').slideToggle();
             $('#custom-select').toggleClass('open');
         });
@@ -343,8 +374,155 @@ function splitNumber(val) {
     squareInstance.update({to: val});
     $(this).prop("value", val);});
 });
+ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+        center: [57.165705, 65.598890],
+        zoom: 11
+    }, {
+        searchControlProvider: 'yandex#search'
+    });
+    const iconsPath = [
+        {
+            passive: './img/aiva.svg',
+            active: './img/aivaact.svg'
+        },
+        {
+            passive: './img/preobr.svg',
+            active: './img/preobract.svg'
+        },
+        {
+            passive: './img/nikol.svg',
+            active: './img/nikolact.svg'
+        },
+        {
+            passive: './img/preobr.svg',
+            active: './img/preobract.svg'
+        },
+    ];
+    const icons = [];
+    MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+        '<div class="map-icon">$[properties.iconContent]</div>'
+    );
+    const aivazovsky = new ymaps.Placemark([57.165705, 65.598890], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: './img/aiva.svg',
+        iconImageSize: [48, 48],
+        iconImageOffset: [-5, -38]
+    });
+    const peobraghensk = new ymaps.Placemark([57.117535, 65.501678], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: './img/preobr.svg',
+        iconImageSize: [48, 48],
+        iconImageOffset: [-5, -38]
+    });
+    const peobraghenskMosk = new ymaps.Placemark([57.123623, 65.470245], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: './img/nikol.svg',
+        iconImageSize: [48, 48],
+        iconImageOffset: [-5, -38]
+    });
+    const nikolski = new ymaps.Placemark([57.088936, 65.515488], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: './img/preobr.svg',
+        iconImageSize: [48, 48],
+        iconImageOffset: [-5, -38]
+    });
+    icons.push(aivazovsky, peobraghensk, peobraghenskMosk, nikolski);
+        document.querySelector('#aivazovskiMap').addEventListener('click', () => {
+            aivazovsky.options.set('iconImageHref', './img/aivaact.svg' )
+        });
+        document.querySelector('#peobraghenskMap').addEventListener('click', () => {
+            peobraghensk.options.set('iconImageHref', './img/preobract.svg' )
+        });
+        document.querySelector('#peobraghenskMoskMap').addEventListener('click', () => {
+            
+            peobraghenskMosk.options.set('iconImageHref', './img/preobract.svg' )
+        });
+        document.querySelector('#nikolskiMap').addEventListener('click', () => {
+            nikolski.options.set('iconImageHref', './img/nikolact.svg' )
+        });
+        $(function(){
+            $('#aivazovskiMap').click(function(){
+                peobraghensk.options.set('iconImageHref', './img/preobr.svg' );
+                peobraghenskMosk.options.set('iconImageHref', './img/preobr.svg' );
+                nikolski.options.set('iconImageHref', './img/nikol.svg');
+            });
+            $('#peobraghenskMap').click(function(){
+                aivazovsky.options.set('iconImageHref', './img/aiva.svg' );
+                peobraghenskMosk.options.set('iconImageHref', './img/preobr.svg' );
+                nikolski.options.set('iconImageHref', './img/nikol.svg');
+            });
+            $('#peobraghenskMoskMap').click(function(){
+                peobraghensk.options.set('iconImageHref', './img/preobr.svg' );
+                aivazovsky.options.set('iconImageHref', './img/aiva.svg' );
+                nikolski.options.set('iconImageHref', './img/nikol.svg');
+            });
+            $('#nikolskiMap').click(function(){
+                peobraghensk.options.set('iconImageHref', './img/preobr.svg' );
+                peobraghenskMosk.options.set('iconImageHref', './img/preobr.svg' );
+                aivazovsky.options.set('iconImageHref', './img/aiva.svg');
+            });
+        });
+    
+    aivazovsky.events.add('click', () => {
+        $(function(){
+            $('#aivazovskiMap').toggleClass('act_item');
+            $('#peobraghenskMap,#peobraghenskMoskMap,#nikolskiMap').removeClass('act_item');
+        });
+            aivazovsky.options.set('iconImageHref', './img/aivaact.svg' )
+            peobraghensk.options.set('iconImageHref', './img/preobr.svg' )
+            nikolski.options.set('iconImageHref', './img/nikol.svg' )
+            peobraghenskMosk.options.set('iconImageHref', './img/preobr.svg' )
+    })
+    peobraghensk.events.add('click', () => {
+        $(function(){
+            $('#peobraghenskMap').toggleClass('act_item');
+            $('#aivazovskiMap,#peobraghenskMoskMap,#nikolskiMap').removeClass('act_item');
+        });
+            peobraghensk.options.set('iconImageHref', './img/preobract.svg' )
+            nikolski.options.set('iconImageHref', './img/nikol.svg' )
+            aivazovsky.options.set('iconImageHref', './img/aiva.svg' )
+            peobraghenskMosk.options.set('iconImageHref', './img/preobr.svg' )
 
-
+    })
+    peobraghenskMosk.events.add('click', () => {
+        $(function(){
+            $('#peobraghenskMoskMap').toggleClass('act_item');
+            $('#aivazovskiMap,#peobraghenskMap,#nikolskiMap').removeClass('act_item');
+        });
+            peobraghenskMosk.options.set('iconImageHref', './img/preobract.svg' )
+            peobraghensk.options.set('iconImageHref', './img/preobr.svg' )
+            nikolski.options.set('iconImageHref', './img/nikol.svg' )
+            aivazovsky.options.set('iconImageHref', './img/aiva.svg' )
+    })
+    nikolski.events.add('click', () => {
+        $(function(){
+            $('#nikolskiMap').toggleClass('act_item');
+            $('#peobraghenskMap,#peobraghenskMoskMap,#aivazovskiMap').removeClass('act_item');
+        });
+            nikolski.options.set('iconImageHref', './img/nikolact.svg' )
+            peobraghensk.options.set('iconImageHref', './img/preobr.svg' )
+            aivazovsky.options.set('iconImageHref', './img/aiva.svg' )
+            peobraghenskMosk.options.set('iconImageHref', './img/preobr.svg' )
+    })
+    function clearIcons() {
+        icons.forEach((el, index) => {
+            el.options.set('iconImageHref', iconsPath[index].passive)
+        })
+    }
+    myMap.geoObjects
+        .add(aivazovsky)
+        .add(peobraghensk)
+        .add(peobraghenskMosk)
+        .add(nikolski)
+        myMap.behaviors.disable(['scrollZoom']);
+        myMap.controls.remove('searchControl'); // удаляем поиск
+        myMap.controls.remove('trafficControl'); // удаляем контроль трафика
+        myMap.controls.remove('typeSelector'); // удаляем тип
+        myMap.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+        myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
+        myMap.controls.remove('rulerControl'); // удаляем контрол правил
+});
 
 
 

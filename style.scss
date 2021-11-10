@@ -1465,10 +1465,99 @@ button{
 .polic_media{
     display: none;
 }
+.office_block{
+    position: absolute;
+    width: 600px ;
+    left: 3%;
+    top: 3%;
+    z-index: 250;
+    background-color: #fff;
+    border-radius: 5px;
+    &_item{
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px;
+        &_p{
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+}
+.act_item{
+    background-color: #003457 !important;
+    color: #fff !important;
+}
+.number{
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0px 5px;
+    border: 3px solid #919CA2;
+    border-radius: 10px;
+}
+.offices-info{
+    position: absolute !important;
+    height: 400px !important;
+    width: 300px !important;
+    left: 100px;
+    top: 100px;
+}
+.offices{
+    position: relative;
+    min-height: 880px;
+    padding-bottom: 60px !important;
+}
+#map{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+}
 .flexdir{
     flex-direction: row;
 }
+.filter_item{
+    display: flex;
+    align-items: center;
+}
+.mono{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: .3s;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.geo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: .3s;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.actprop{
+    background-color: #003457 !important;
+    & > svg > rect{
+        stroke: #fff !important;
+    }
+    & > svg > path{
+        stroke: #fff !important;
+    }
+}
 @media (max-width:1132px) {
+    .__enco_find_all{
+        padding-top: 60px;
+    }
     .prev1{
         left: 30px;
     }
@@ -1531,6 +1620,12 @@ button{
     }
     .__enco_question_container_cpecial{
         width: 100%;
+    }
+    .office_block_item_p{
+        font-size: 19px;
+    }
+    .office_block_item{
+        height: 70px;
     }
 }
 @media (max-width:768px) {
@@ -1630,6 +1725,9 @@ button{
         left: 30px;
         color: #fff;
     }
+    .office_block{
+        width: 300px;
+    }
 }
 @media (max-width:540px) {
     // .__enco_env_proj_item {
@@ -1676,6 +1774,7 @@ button{
     .__enco_question_container_cpecial_btn > a{
         width: 210px;
     }
+
 }
 @media (max-width:400px) {
     .large_back_call_input{
